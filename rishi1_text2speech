@@ -1,0 +1,19 @@
+pip install gTTS
+
+
+from gtts import gTTS
+import os
+
+def text_to_speech(text):
+    # Create a gTTS object
+    tts = gTTS(text=text, lang='en')
+
+    # Save the audio file
+    tts.save("output.mp3")
+
+    # Play the audio file
+    os.system("mpg321 output.mp3")
+
+if __name__ == "__main__":
+    text = input("Enter text to convert to speech: ")
+    text_to_speech(text)
