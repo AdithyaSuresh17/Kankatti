@@ -1,0 +1,17 @@
+import pyttsx3
+from pydub import AudioSegment
+from pydub.playback import play
+
+def text_to_speech(text, output_file):
+    engine = pyttsx3.init()
+    engine.save_to_file(text, output_file)
+    engine.runAndWait()
+
+text = "hey this is text to speech"
+output_file = "output.mp3"
+text_to_speech(text, output_file)
+
+dependencies:
+pyttsx3
+pydub
+espeak(!apt-get install espeak)
